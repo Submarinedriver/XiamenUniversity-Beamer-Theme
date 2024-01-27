@@ -1,0 +1,365 @@
+\documentclass{beamer}
+\usepackage{ctex, hyperref}
+\usepackage[T1]{fontenc}
+
+% other packages
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{graphicx,pstricks,listings,stackengine}
+\usepackage{caption, subfigure}
+
+% xmu beamer
+\usepackage[blue]{XMUBeamer}
+
+\author[SGM]{史国明}
+\title{厦门大学\textrm{Beamer}模板}
+\subtitle{\textrm{Beamer的副标题}}
+\institute{厦门大学xxxx学院xxxx系}
+\date{\today}
+
+
+% defs6
+\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{blue}\footnotesize #1}}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{red!0!green!0!blue!100},
+    emphstyle=\ttfamily\color{red!100!green!0!blue!0},    % Custom highlighting style
+    stringstyle=\color{red!0!green!100!blue!0},
+    numbers=left,
+    numberstyle=\small\color{gray!50},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox
+}
+
+
+\begin{document}
+\begin{frame}
+    \titlepage
+    \begin{figure}[htpb]
+       \begin{center}
+            \includegraphics[width=0.2\linewidth]{pic/xmu_logo.png}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \tableofcontents[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+\end{frame}
+
+
+\section{课题背景}
+
+\begin{frame}{Why Beamer}
+	\begin{itemize}
+		\item \LaTeX 广泛用于学术界，期刊会议论文模板
+	\end{itemize}
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{c|c}
+			Microsoft\textsuperscript{\textregistered}  Word & \LaTeX \\
+			\hline
+			文字处理工具 & 专业排版软件 \\
+			容易上手，简单直观 & 容易上手 \\
+			所见即所得 & 所见即所想，所想即所得 \\
+			高级功能不易掌握 & 进阶难，但一般用不到 \\
+			处理长文档需要丰富经验 & 和短文档处理基本无异 \\
+			花费大量时间调格式 & 无需担心格式，专心作者内容 \\
+			公式排版差强人意 & 尤其擅长公式排版 \\
+			二进制格式，兼容性差 & 文本文件，易读、稳定 \\
+			付费商业许可 & 自由免费使用 \\
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\begin{frame}{用Beamer很高大上？}
+    \begin{itemize}[<+-| alert@+>] % 当然，除了alert，手动在里面插 \pause 也行
+        \item 大家都会\LaTeX{}，好多学校都有自己的\textrm{Beamer}主题
+        \item 中文支持请选择 Xe\LaTeX{} 编译选项
+        \item 请使用bibtex编译引用
+        \item GitHub项目地址为 \href{https://github.com/Submarinedriver/XiamenUniversity-Beamer-Theme}{https://github.com/Submarinedriver/XiamenUniversity-Beamer-Theme}，如果有bug或者feature request可以去里面提issue
+        \item 本模板已发布至overleaf，地址为 \href{https://www.overleaf.com/latex/templates/tkkc-beamer-template/ktrcfmhbdkwc}{https://www.overleaf.com/latex/templates/tkkc-beamer-template/ktrcfmhbdkwc}
+    \end{itemize}
+\end{frame}
+
+
+\section{模板参考}
+
+\begin{frame}
+    \begin{itemize}
+        \item 本模板参考自 \url{https://cn.overleaf.com/latex/templates/sudaiai-beamer-template/dzrthpbrzppc}\cite{origin1}\\
+        \url{https://www.overleaf.com/latex/templates/xmu-beamer-template/zzrksvwjnkzn}\cite{origin2}\\
+        \url{https://www.overleaf.com/latex/templates/tkkc-beamer-template/ktrcfmhbdkwc}\cite{origin3}\\
+        \url{https://www.overleaf.com/latex/templates/thu-beamer-theme/vwnqmzndvwyb}\cite{origin4}
+    \end{itemize}
+\end{frame}
+
+
+\section{改动说明}
+
+\begin{frame}{最新改动说明}
+    \begin{itemize}
+        \item 相对于原厦门大学嘉庚学院模板添加群楼背景和右侧校徽背景
+        \item 修改主题色 只保留一个主题色
+        \item 更新校徽图案 文件夹有更多有关厦门大学的图片 有需要可自行添加
+        \item 相对于原清华大学模板修改了脚注部分
+    \end{itemize}
+\end{frame}
+\section{使用说明}
+
+\begin{frame}{列表举例}
+	\begin{block}{\textbf{无序列表}}
+		\begin{itemize}
+			\item 无序列表
+			\item 无序列表
+			\item 无序列表
+		\end{itemize}
+	\end{block}
+	
+	\begin{block}{\textbf{有序列表}}
+		\begin{enumerate}
+			\item 有序列表
+			\item 有序列表
+			\item 有序列表
+		\end{enumerate}
+	\end{block}
+\end{frame}
+
+\begin{frame}{多种block展示}
+	\begin{block}{普通框}
+		中英文混合排版，中英文混合排版，中英文混合排版Sed iaculis
+		dapibus gravida. Morbi sed tortor erat, nec interdum arcu. 
+	\end{block}
+	\begin{exampleblock}{举例框}
+		中英文混合排版，中英文混合排版，中英文混合排版Sed iaculis
+		dapibus gravida. Morbi sed tortor erat, nec interdum arcu.
+	\end{exampleblock}
+	\begin{alertblock}{警告框}
+		中英文混合排版，中英文混合排版，中英文混合排版Sed iaculis
+		dapibus gravida. Morbi sed tortor erat, nec interdum arcu.
+	\end{alertblock}
+\end{frame}
+
+\begin{frame}{排版举例}
+    \begin{exampleblock}{无编号公式} % 加 * 
+        \begin{equation*}
+            J(\theta) = \mathbb{E}_{\pi_\theta}[G_t] = \sum_{s\in\mathcal{S}} d^\pi (s)V^\pi(s)=\sum_{s\in\mathcal{S}} d^\pi(s)\sum_{a\in\mathcal{A}}\pi_\theta(a|s)Q^\pi(s,a)
+        \end{equation*}
+    \end{exampleblock}
+    \begin{exampleblock}{多行多列公式\footnote{如果公式中有文字出现，请用 $\backslash$mathrm\{\} 或者 $\backslash$text\{\} 包含，不然就会变成 $clip$，在公式里看起来比 $\mathrm{clip}$ 丑非常多。}}
+        % 使用 & 分隔
+        \begin{align}
+            Q_\mathrm{target}&=r+\gamma Q^\pi(s^\prime, \pi_\theta(s^\prime)+\epsilon)\\
+            \epsilon&\sim\mathrm{clip}(\mathcal{N}(0, \sigma), -c, c)\nonumber
+        \end{align}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{排版举例}
+    \begin{exampleblock}{编号多行公式}
+        % Taken from Mathmode.tex
+        \begin{multline}
+            A=\lim_{n\rightarrow\infty}\Delta x\left(a^{2}+\left(a^{2}+2a\Delta x+\left(\Delta x\right)^{2}\right)\right.\label{eq:reset}\\
+            +\left(a^{2}+2\cdot2a\Delta x+2^{2}\left(\Delta x\right)^{2}\right)\\
+            +\left(a^{2}+2\cdot3a\Delta x+3^{2}\left(\Delta x\right)^{2}\right)\\
+            +\ldots\\
+            \left.+\left(a^{2}+2\cdot(n-1)a\Delta x+(n-1)^{2}\left(\Delta x\right)^{2}\right)\right)\\
+            =\frac{1}{3}\left(b^{3}-a^{3}\right)
+        \end{multline}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{图形与分栏}
+    % From thuthesis user guide.
+    \begin{minipage}[c]{0.3\linewidth}
+        \psset{unit=0.8cm}
+        \begin{pspicture}(-1.75,-3)(3.25,4)
+            \psline[linewidth=0.25pt](0,0)(0,4)
+            \rput[tl]{0}(0.2,2){$\vec e_z$}
+            \rput[tr]{0}(-0.9,1.4){$\vec e$}
+            \rput[tl]{0}(2.8,-1.1){$\vec C_{ptm{ext}}$}
+            \rput[br]{0}(-0.3,2.1){$\theta$}
+            \rput{25}(0,0){%
+            \psframe[fillstyle=solid,fillcolor=lightgray,linewidth=.8pt](-0.1,-3.2)(0.1,0)}
+            \rput{25}(0,0){%
+            \psellipse[fillstyle=solid,fillcolor=yellow,linewidth=3pt](0,0)(1.5,0.5)}
+            \rput{25}(0,0){%
+            \psframe[fillstyle=solid,fillcolor=lightgray,linewidth=.8pt](-0.1,0)(0.1,3.2)}
+            \rput{25}(0,0){\psline[linecolor=red,linewidth=1.5pt]{->}(0,0)(0.,2)}
+%           \psRotation{0}(0,3.5){$\dot\phi$}
+%           \psRotation{25}(-1.2,2.6){$\dot\psi$}
+            \psline[linecolor=red,linewidth=1.25pt]{->}(0,0)(0,2)
+            \psline[linecolor=red,linewidth=1.25pt]{->}(0,0)(3,-1)
+            \psline[linecolor=red,linewidth=1.25pt]{->}(0,0)(2.85,-0.95)
+            \psarc{->}{2.1}{90}{112.5}
+            \rput[bl](.1,.01){C}
+        \end{pspicture}
+    \end{minipage}\hspace{1cm}
+    \begin{minipage}{0.5\linewidth}
+        \medskip
+        %\hspace{2cm}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[height=.4\textheight]{pic/dtmf.pdf}
+        \end{figure}
+    \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]{\LaTeX{} 常用命令}
+    \begin{exampleblock}{命令}
+        \centering
+        \footnotesize
+        \begin{tabular}{llll}
+            \cmd{chapter} & \cmd{section} & \cmd{subsection} & \cmd{paragraph} \\
+            章 & 节 & 小节 & 带题头段落 \\ \hline
+            \cmd{centering} & \cmd{emph} & \cmd{verb} & \cmd{url} \\
+            居中对齐 & 强调 & 原样输出 & 超链接 \\ \hline
+            \cmd{footnote} & \cmd{item} & \cmd{caption} & \cmd{includegraphics} \\
+            脚注 & 列表条目 & 标题 & 插入图片 \\ \hline
+            \cmd{label} & \cmd{cite} & \cmd{ref} \\
+            标号 & 引用参考文献 & 引用图表公式等 \\ \hline
+        \end{tabular}
+    \end{exampleblock}
+    \begin{exampleblock}{环境}
+        \centering
+        \footnotesize
+        \begin{tabular}{lll}
+            \env{table} & \env{figure} & \env{equation}\\
+            表格 & 图片 & 公式 \\\hline
+            \env{itemize} & \env{enumerate} & \env{description}\\
+            无编号列表 & 编号列表 & 描述 \\\hline
+        \end{tabular}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{\LaTeX{} 环境命令举例}
+    \begin{minipage}{0.5\linewidth}
+\begin{lstlisting}[language=TeX]
+\begin{itemize}
+  \item A \item B
+  \item C
+  \begin{itemize}
+    \item C-1
+  \end{itemize}
+\end{itemize}
+\end{lstlisting}
+    \end{minipage}\hspace{1cm}
+    \begin{minipage}{0.3\linewidth}
+        \begin{itemize}
+            \item A
+            \item B
+            \item C
+            \begin{itemize}
+                \item C-1
+            \end{itemize}
+        \end{itemize}
+    \end{minipage}
+
+    \medskip
+
+    \pause
+    \begin{minipage}{0.5\linewidth}
+\begin{lstlisting}[language=TeX]
+\begin{enumerate}
+  \item 巨佬 \item 大佬
+  \item 萌新
+  \begin{itemize}
+    \item[n+e] 瑟瑟发抖
+  \end{itemize}
+\end{enumerate}
+\end{lstlisting}
+    \end{minipage}\hspace{1cm}
+    \begin{minipage}{0.3\linewidth}
+        \begin{enumerate}
+            \item 巨佬
+            \item 大佬
+            \item 萌新
+            \begin{itemize}
+                \item[n+e] 瑟瑟发抖
+            \end{itemize}
+        \end{enumerate}
+    \end{minipage}
+\end{frame}
+
+\begin{frame}[fragile]{\LaTeX{} 数学公式}
+    \begin{columns}
+        \begin{column}{.55\textwidth}
+\begin{lstlisting}[language=TeX]
+$V = \frac{4}{3}\pi r^3$
+
+\[
+  V = \frac{4}{3}\pi r^3
+\]
+
+\begin{equation}
+  \label{eq:vsphere}
+  V = \frac{4}{3}\pi r^3
+\end{equation}
+\end{lstlisting}
+        \end{column}
+        \begin{column}{.4\textwidth}
+            $V = \frac{4}{3}\pi r^3$
+            \[
+                V = \frac{4}{3}\pi r^3
+            \]
+            \begin{equation}
+                \label{eq:vsphere}
+                V = \frac{4}{3}\pi r^3
+            \end{equation}
+        \end{column}
+    \end{columns}
+    \begin{itemize}
+        \item 更多内容请自行网上搜索
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{表格与引用}
+    \begin{columns}
+        \column{.6\textwidth}
+\begin{lstlisting}[language=TeX]
+\begin{table}[htpb]
+  \centering
+  \caption{编号与含义}
+  \label{tab:number}
+  \begin{tabular}{cl}\toprule
+  列1 & 列2 \\\midrule
+  1 & a\\
+  2 & b\\\bottomrule
+  \end{tabular}
+\end{table}
+\normalsize 这里展示引用公式
+~(\ref{eq:vsphere})与引用表格
+~\ref{tab:number}。
+\end{lstlisting}
+        \column{.35\textwidth}
+        \begin{table}[htpb]
+            \centering
+            \caption{编号与含义}
+            \label{tab:number}
+            \begin{tabular}{cl}\toprule
+                列1 & 列2 \\\midrule
+                1 & a\\
+                2 & b\\\bottomrule
+            \end{tabular}
+        \end{table}
+        \normalsize 这里展示引用公式~(\ref{eq:vsphere})与引用表格\ref{tab:number}。
+    \end{columns}
+\end{frame}
+
+
+\section{参考文献}
+
+\begin{frame}[allowframebreaks]
+    \bibliography{refe}
+    \bibliographystyle{alpha}
+    % 如果参考文献太多的话，可以像下面这样调整字体：
+    % \tiny\bibliographystyle{alpha}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        {\Huge\calligra Thanks!}
+    \end{center}
+\end{frame}
+
+\end{document} 
